@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%= review.content %>
+        <span class="badge badge-primary badge-pill"><%= review.rating %></span>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'Back to all restaurants', restaurants_path %> |
+  <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+</div>
